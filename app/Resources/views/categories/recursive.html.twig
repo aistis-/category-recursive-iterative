@@ -1,0 +1,20 @@
+{% macro print_categories(categories) %}
+    {% import _self as macros %}
+
+    {% for category in categories %}
+        <li>
+            {{ category.name }}
+            {% if category.children is defined %}
+                <ul>
+                    {{ macros.print_categories(category.children) }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+{% import _self as macros %}
+
+<ul>
+    {{ macros.print_categories(categories) }}
+</ul>

@@ -1,0 +1,11 @@
+# This file is a "template" of what your parameters.yml file should look like
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     192.168.33.1 # Your local MySQL from Vagrant
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+    locale:            en
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt

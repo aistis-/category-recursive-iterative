@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block content %}
+    {% include ':categories:recursive.html.twig' %}
+
+    {% include ':categories:iterative.html.twig' %}
+
+    <h2>{{ 'add_new_category'|trans }}</h2>
+
+    {{ form(form) }}
+
+{% endblock %}

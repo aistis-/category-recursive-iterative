@@ -1,0 +1,3 @@
+services:
+    github:
+        class: Github\Client
