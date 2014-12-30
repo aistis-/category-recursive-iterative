@@ -135,3 +135,5 @@ file_line { 'auto-cd':
   path => '/home/vagrant/.bashrc',
   line => "cd /var/www",
 }
+
+class { 'phpunit': }

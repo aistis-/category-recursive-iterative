@@ -10,6 +10,8 @@ class CategoryTreeHelper
      * @param array $categories
      *
      * @return array
+     *
+     * @throws \Exception
      */
     public static function buildCategoryTree(array $categories)
     {
@@ -17,7 +19,11 @@ class CategoryTreeHelper
         $categoryTree = [];
 
         foreach($categories as &$category) {
-            if (null === $category['parent_category_id']) {
+            if (!isset($category['id'])) {
+                throw new \Exception('Bad array structure');
+            }
+
+            if (empty($category['parent_category_id'])) {
                 $categoryTree[] = &$category;
             } else {
                 $children[$category['parent_category_id']][] = &$category;
