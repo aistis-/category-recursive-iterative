@@ -40,7 +40,7 @@ class Category
      *
      * @var Category|null
      *
-     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="childrenCategories")
      * @ORM\JoinColumn(name="parent_category_id", referencedColumnName="id", nullable=true, unique=false)
      */
     private $parentCategory;

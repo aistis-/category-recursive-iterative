@@ -1,3 +1,5 @@
 services:
-    github:
-        class: Github\Client
+    app.twig.category_extension:
+        class: AppBundle\Twig\CategoryExtension
+        tags:
+            - { name: twig.extension }
